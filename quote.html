@@ -9,21 +9,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="container">
-    <div class="topbar-group">
-      <span>Licensed moving, storage & piano specialists</span>
-      <span>Business address available upon request</span>
-    </div>
-    <div class="topbar-group">
-      <a href="tel:+19803937794">(980) 393-7794</a>
-      <a href="mailto:info@gwmovingandstorage.com">info@gwmovingandstorage.com</a>
-    </div>
-  </div>
 </div>
 <header class="nav-wrap">
   <div class="container nav">
@@ -51,20 +46,35 @@
     <div class="container">
       <div class="eyebrow">Request a free quote</div>
       <h1>Tell us about your move.</h1>
-      <p>Share a few details below and your email app will open with a ready-to-send message to <strong>info@gwmovingandstorage.com</strong>. This keeps the website fully compatible with GitHub Pages.</p>
+      <p>Share a few details below and click <strong>Submit Quote Request</strong>. Your request will be sent directly to <strong>info@gwmovingandstorage.com</strong>, and you’ll see a confirmation page when it has been received.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container quote-grid">
       <div class="form-card">
-        <form class="form-grid" data-mail-form data-to="info@gwmovingandstorage.com">
-          <input type="hidden" name="subject" value="Website Quote Request - GW Moving and Storage LLC">
-          <div class="field"><label>Full name</label><input name="Full name" required></div>
-          <div class="field"><label>Email address</label><input name="Email" type="email" required></div>
-          <div class="field"><label>Phone number</label><input name="Phone"></div>
-          <div class="field"><label>Service needed</label>
-            <select name="Service needed">
+        <form class="form-grid quote-form" action="https://formsubmit.co/info@gwmovingandstorage.com" method="POST">
+          <input type="hidden" name="_subject" value="New Website Quote Request - GW Moving and Storage LLC">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://gwmovingandstorage.com/thank-you.html">
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field">
+            <label for="quote-name">Full name <span aria-hidden="true">*</span></label>
+            <input id="quote-name" name="Full name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="quote-email">Email address <span aria-hidden="true">*</span></label>
+            <input id="quote-email" name="Email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="quote-phone">Phone number <span aria-hidden="true">*</span></label>
+            <input id="quote-phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <div class="field">
+            <label for="quote-service">Service needed <span aria-hidden="true">*</span></label>
+            <select id="quote-service" name="Service needed" required>
+              <option value="" selected disabled>Select a service</option>
               <option>Residential moving</option>
               <option>Long-distance moving</option>
               <option>Storage services</option>
@@ -74,12 +84,30 @@
               <option>Combination of services</option>
             </select>
           </div>
-          <div class="field"><label>Move from</label><input name="Origin / pickup location" required></div>
-          <div class="field"><label>Move to</label><input name="Destination / delivery location" required></div>
-          <div class="field"><label>Preferred date</label><input name="Preferred date" type="date"></div>
-          <div class="field"><label>Property type</label><input name="Property type" placeholder="Apartment, house, office, studio..."></div>
-          <div class="field full"><label>Move details</label><textarea name="Move details" rows="7" placeholder="Tell us about the item count, stairs, elevator access, storage needs, or piano type."></textarea></div>
-          <div class="field full"><button class="btn btn-primary" type="submit">Prepare Quote Email</button></div>
+          <div class="field">
+            <label for="quote-origin">Move from <span aria-hidden="true">*</span></label>
+            <input id="quote-origin" name="Origin / pickup location" autocomplete="street-address" placeholder="City, state or ZIP code" required>
+          </div>
+          <div class="field">
+            <label for="quote-destination">Move to <span aria-hidden="true">*</span></label>
+            <input id="quote-destination" name="Destination / delivery location" placeholder="City, state or ZIP code" required>
+          </div>
+          <div class="field">
+            <label for="quote-date">Preferred move date</label>
+            <div class="date-control"><input id="quote-date" name="Preferred date" type="date"></div>
+          </div>
+          <div class="field">
+            <label for="quote-property">Property type</label>
+            <input id="quote-property" name="Property type" placeholder="Apartment, house, office, studio...">
+          </div>
+          <div class="field full">
+            <label for="quote-details">Move details</label>
+            <textarea id="quote-details" name="Move details" rows="7" placeholder="Tell us about the approximate item count, stairs, elevator access, storage needs, piano type, or anything else we should know."></textarea>
+          </div>
+          <div class="field full form-actions">
+            <p class="form-helper">Fields marked * are required. Your information is used only to respond to your moving or storage request.</p>
+            <button class="btn btn-primary quote-submit" type="submit">Submit Quote Request</button>
+          </div>
         </form>
       </div>
       <div class="side-list">
@@ -93,7 +121,7 @@
         </div>
         <div class="side-card">
           <h3>Prefer to call?</h3>
-          <p><strong><a href="tel:+19803937794">(980) 393-7794</a></strong><br>Or email us directly at <a href="mailto:info@gwmovingandstorage.com">info@gwmovingandstorage.com</a>.</p>
+          <p><strong><a href="tel:+15125222172">(512) 522-2172</a></strong><br>Or email us directly at <a href="mailto:info@gwmovingandstorage.com">info@gwmovingandstorage.com</a>.</p>
         </div>
       </div>
     </div>
@@ -127,14 +155,13 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <a href="tel:+19803937794">(980) 393-7794</a>
+        <a href="tel:+15125222172">(512) 522-2172</a>
         <a href="mailto:info@gwmovingandstorage.com">info@gwmovingandstorage.com</a>
-        <span>Business address available upon request</span>
+        <span></span>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 GW Moving and Storage LLC. All rights reserved.</span>
-      <span>Website ready for GitHub Pages deployment on <strong>gwmovingandstorage.com</strong>.</span>
     </div>
   </div>
 </footer>

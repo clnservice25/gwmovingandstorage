@@ -22,7 +22,7 @@ button,input,textarea,select{font:inherit}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:44px;flex-wrap:wrap;padding:8px 0}
 .topbar-group{display:flex;gap:18px;flex-wrap:wrap}
 .topbar a:hover{color:#fff}
-.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(229,235,245,.9)}
+.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:0}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:84px}
 .brand{display:flex;align-items:center;gap:14px;min-width:0}
 .brand img{height:58px;width:auto;border-radius:10px}
@@ -38,9 +38,9 @@ button,input,textarea,select{font:inherit}
 .btn-dark{background:var(--navy);color:#fff}
 .btn-outline{background:#fff;border:1px solid #d9e2f1;color:var(--navy)}
 .menu-btn{display:none;background:none;border:0;padding:8px;color:var(--navy)}
-.hero{position:relative;isolation:isolate;color:#fff;background:var(--navy)}
-.hero-media{position:absolute;inset:0;z-index:-2;background:url('assets/images/hero-moving-team.png') center/cover no-repeat}
-.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,22,60,.86) 0%,rgba(4,22,60,.67) 44%,rgba(4,22,60,.36) 100%)}
+.hero{position:relative;isolation:isolate;color:#fff;background:#0a214d}
+.hero-media{position:absolute;inset:0;z-index:-2;background:url('../images/hero-moving-truck.png') center center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,24,56,.74) 0%,rgba(6,24,56,.58) 48%,rgba(6,24,56,.28) 100%)}
 .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;min-height:680px;padding:80px 0 90px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;color:#ffd56e;text-transform:uppercase;letter-spacing:.11em;font-size:.78rem;font-weight:900}
 .eyebrow:before{content:"";width:34px;height:3px;background:var(--gold);border-radius:999px}
@@ -190,3 +190,30 @@ button,input,textarea,select{font:inherit}
 .home-track-form input{width:100%;min-width:0;border:1px solid #d9e3f3;border-radius:14px;padding:13px 14px}
 @media(max-width:980px){.tracking-shell{grid-template-columns:1fr}.track-search-card{position:static}.home-track{grid-template-columns:1fr}.home-track-form{min-width:0}}
 @media(max-width:650px){.track-input-row,.home-track-form{flex-direction:column}.track-meta{grid-template-columns:1fr}.track-route{grid-template-columns:1fr}.track-route .route-arrow{transform:rotate(90deg);justify-self:start}}
+
+
+/* Responsive quote form */
+.quote-grid{align-items:start}
+.form-card{min-width:0}
+.form-grid{min-width:0}
+.field{min-width:0}
+.field input,.field textarea,.field select{max-width:100%;min-width:0}
+.quote-form .field label span{color:#9a6810}
+.form-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.date-control{width:100%;min-width:0;border:1px solid #d9e3f3;border-radius:14px;padding:14px 15px;background:#fff}
+.date-control:focus-within{border-color:var(--navy-2);box-shadow:0 0 0 3px rgba(18,63,138,.08)}
+.date-control input[type="date"]{display:block;width:100%;min-width:0;border:0!important;background:transparent;padding:0!important;outline:0;box-shadow:none!important;color:var(--ink)}
+.form-actions{display:flex;flex-direction:column;gap:12px}
+.form-helper{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.quote-submit{width:100%;min-height:54px;font-size:1rem}
+.quote-submit:focus-visible{outline:3px solid rgba(18,63,138,.28);outline-offset:3px}
+.thank-you-wrap{max-width:760px;margin:0 auto;text-align:center}
+.thank-you-icon{width:74px;height:74px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:#edf7eb;color:#23834b;font-size:2rem;font-weight:900}
+
+@media(max-width:720px){
+  .form-card{padding:22px 18px}
+  .form-grid{gap:16px}
+  .field.full{grid-column:auto}
+  .quote-submit{min-height:56px}
+  .form-helper{font-size:.84rem}
+}
