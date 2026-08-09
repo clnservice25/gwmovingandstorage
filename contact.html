@@ -60,24 +60,26 @@
         <div class="kv">
           <div class="row"><div class="bullet">☎</div><div><strong>Phone</strong><br><a href="tel:+15125222172">(512) 522-2172</a></div></div>
           <div class="row"><div class="bullet">✉</div><div><strong>Email</strong><br><a href="mailto:info@gwmovingandstorage.com">info@gwmovingandstorage.com</a></div></div>
-          <div class="row"><div class="bullet">⌂</div><div><strong>Business Address</strong><br>Available upon request</div></div>
           <div class="row"><div class="bullet">★</div><div><strong>Specialty Services</strong><br>Piano Moving • Piano Relocation • Piano Storage</div></div>
         </div>
         <div style="margin-top:18px"><button class="btn btn-dark" type="button" data-tawk-open>Chat With Our Moving Team</button></div>
-        <div class="logo-wall">
-          <div class="logo-chip"><img src="assets/images/logo-wordmark.png" alt="GW wordmark logo"></div>
-          <div class="logo-chip"><img src="assets/images/logo-combined.png" alt="GW combined logo"></div>
-        </div>
       </div>
       <div class="form-card">
-        <form class="form-grid" data-mail-form data-to="info@gwmovingandstorage.com">
-          <input type="hidden" name="subject" value="Website Contact Enquiry - GW Moving and Storage LLC">
-          <div class="field"><label>Name</label><input name="Name" required></div>
-          <div class="field"><label>Email</label><input name="Email" type="email" required></div>
-          <div class="field"><label>Phone</label><input name="Phone"></div>
-          <div class="field"><label>Enquiry type</label><select name="Enquiry type"><option>General enquiry</option><option>Moving service</option><option>Storage</option><option>Piano service</option><option>Quote follow-up</option></select></div>
-          <div class="field full"><label>Message</label><textarea name="Message" rows="8" required></textarea></div>
-          <div class="field full"><button class="btn btn-primary" type="submit">Prepare Email</button></div>
+        <form class="form-grid quote-form" action="https://formsubmit.co/info@gwmovingandstorage.com" method="POST">
+          <input type="hidden" name="_subject" value="New Website Contact Message - GW Moving and Storage LLC">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://gwmovingandstorage.com/thank-you.html">
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field"><label for="contact-name">Name <span aria-hidden="true">*</span></label><input id="contact-name" name="Name" autocomplete="name" required></div>
+          <div class="field"><label for="contact-email">Email <span aria-hidden="true">*</span></label><input id="contact-email" name="Email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="contact-phone">Phone</label><input id="contact-phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <div class="field"><label for="contact-type">Enquiry type</label><select id="contact-type" name="Enquiry type"><option>General enquiry</option><option>Moving service</option><option>Storage</option><option>Piano service</option><option>Quote follow-up</option><option>Tracking / move status</option></select></div>
+          <div class="field full"><label for="contact-message">Message <span aria-hidden="true">*</span></label><textarea id="contact-message" name="Message" rows="8" required placeholder="Tell us how we can help."></textarea></div>
+          <div class="field full form-actions">
+            <p class="form-helper">Fields marked * are required. Your information is used only to respond to your enquiry.</p>
+            <button class="btn btn-primary quote-submit" type="submit">Submit Message</button>
+          </div>
         </form>
       </div>
     </div>
